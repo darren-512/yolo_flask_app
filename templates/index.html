@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>圖片偵測網站</title>
+</head>
+<body>
+    <h1>上傳圖片進行偵測</h1>
+
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    <form action="/detect" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <input type="submit" value="上傳並偵測">
+    </form>
+
+    {% if result_image %}
+        <h2>偵測結果</h2>
+        <p>偵測到 {{ num_objects }} 個物件</p>
+        <img src="{{ result_image }}" style="max-width:500px;">
+    {% endif %}
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
