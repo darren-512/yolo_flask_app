@@ -10,7 +10,7 @@ RESULT_FOLDER = 'static/results'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(RESULT_FOLDER, exist_ok=True)
 
-model_path = r"C:\Users\darre\OneDrive\Desktop\畢業專題\runs\runs\detect\train3\weights\best.pt"
+model_path = os.path.join(os.path.dirname(__file__), "best.pt")
 assert os.path.exists(model_path), f"模型路徑不存在: {model_path}"
 
 print("載入模型中...")
